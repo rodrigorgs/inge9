@@ -17,4 +17,5 @@ Saiba mais:
 - [Playground](playground)
 - [Exemplos](exemplos)
 - [Referência](referencia)
+- [Como contribuir](contribuir)
 

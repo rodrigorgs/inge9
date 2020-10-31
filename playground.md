@@ -7,7 +7,6 @@ title: inge9 - playground
 TODO:
 
 * parar código
-* Ctrl+Enter para rodar
  -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css">
@@ -33,7 +32,12 @@ int main() {
   editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
     lineNumbers: true,
     matchBrackets: true,
-    mode: "text/x-c++src"
+    mode: "text/x-c++src",
+    extraKeys: {
+      "Ctrl-Space": "autocomplete",
+      "Ctrl-Enter": function () { runCode(); },
+      "Cmd-Enter": function () { runCode(); }
+    }
   });
 </script>
 
@@ -76,12 +80,13 @@ counter = 0;
 var canvas = document.getElementById("gamecanvas");
 var context = canvas.getContext('2d');
 
-document.getElementById("run").addEventListener("click", function () {
+function runCode() {
     // stop previous running code
     window["forceQuit" + counter] = true;
     // run code
     counter++;
     context.clearRect(0, 0, canvas.width, canvas.height);
     run(editor.getValue(), counter);
-});
+}
+document.getElementById("run").addEventListener("click", runCode);
 </script>

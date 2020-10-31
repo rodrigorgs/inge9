@@ -6,7 +6,9 @@ layout: home
 title: inge9 - motor de jogos em C++ para a web
 ---
 
-Com o inge9 você escreve o código do seu jogo em C++ e roda dentro do navegador, sem precisar instalar nada. Após o primeiro acesso, não é necessário sequer ter acesso à Internet para executar seu código.
+Com o **inge9** você escreve o código do seu jogo em C++ e roda dentro do navegador, sem precisar instalar nada. Após o primeiro acesso, não é necessário sequer ter acesso à Internet para executar seu código.
+
+O **inge9** requer conhecimentos básicos de programação em C++, e por isso é indicado para fins educacionais.
 
 Saiba mais:
 

@@ -42,7 +42,7 @@ int main() {
 </script>
 
 <button id="run">Rodar</button>
-<canvas id="gamecanvas" width="640" height="360" style="background: black;"></canvas>
+<canvas tabindex="1" id="gamecanvas" width="640" height="360" style="background: black;"></canvas>
 <p/>
 
 <script src="assets/JSCPP.es5.min.js"></script>
@@ -86,6 +86,7 @@ function runCode() {
     // run code
     counter++;
     context.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.focus();
     run(editor.getValue(), counter);
 }
 document.getElementById("run").addEventListener("click", runCode);

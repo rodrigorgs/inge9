@@ -8,7 +8,6 @@ TODO:
 
 * parar código
 * Ctrl+Enter para rodar
-* adicionar referências para drawText, canvasWidth
  -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.min.css">

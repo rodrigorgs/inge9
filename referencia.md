@@ -3,14 +3,15 @@ layout: page
 title: inge9 - referência
 ---
 
-- [Desenho geométrico](#desenho-geométrico)
+- [Desenho básico](#desenho-básico)
 - [Imagens](#imagens)
+- [Tela](#tela)
 - [Tempo](#tempo)
 - [Teclado](#teclado)
 - [Representação de teclas](#representação-de-teclas)
 - [Representação de cores](#representação-de-cores)
 
-## Desenho geométrico
+## Desenho básico
 
 ```c++
 clear(string cor)
@@ -40,6 +41,15 @@ drawLine(double x1, double y1, double x2, double y2, string cor)
 ```
 
 Desenha uma linha da posição (`x1`, `y1`) até a posição (`x2`, `y2`).
+
+```c++
+drawText(string texto, double x, double y, double tam, string cor)
+```
+
+Escreve o texto `texto` na tela, na posição (`x`, `y`), com tamanho de `tam` pixels, na cor `cor`.
+
+> Exemplo: `drawText("Hello World", 8, 30, 22, "white");`
+
 
 ## Imagens
 
@@ -75,6 +85,24 @@ drawImage("panda", 0, 0);
 drawImage("panda", 50, 0);
 drawImage("hero", 100, 50);
 ```
+
+## Tela
+
+```c++
+canvasWidth()
+```
+
+Retorna a largura da tela de desenho, do tipo *double*.
+
+> Exemplo: `double w = canvasWidth();`
+
+```c++
+canvasHeight()
+```
+
+Retorna a altura da tela de desenho, do tipo *double*.
+
+> Exemplo: `double h = canvasHeight();`
 
 ## Tempo
 

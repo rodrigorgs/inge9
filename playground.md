@@ -18,7 +18,7 @@ TODO:
 #include &lt;inge9&gt;
 int main() {
   double x = -50, y = 50;
-  for (;;) {
+  while (true) {
     clear("black");
     drawText("Hello", x, y, 22, "white");
     x += 4;

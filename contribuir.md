@@ -23,3 +23,4 @@ Você pode contribuir de várias formas para o desenvolvimento do inge9:
 
 - Funções para lidar com o mouse
 - Funções para lidar com tile sheets, de forma a viabilizar animação
+- Funções para reprodução de áudio

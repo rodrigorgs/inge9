@@ -43,11 +43,13 @@ int main() {
 
 <button id="run">Rodar</button>
 <canvas tabindex="1" id="gamecanvas" width="640" height="360" style="background: black;"></canvas>
-<p/>
+<p></p>
+<p>Entrada:<p>
+<textarea id="input" cols="40" rows="5"></textarea>
 
 <script src="assets/JSCPP.es5.min.js"></script>
 <script type="text/javascript">
-  async function run(code, count, config) {
+  async function run(code, count, input, config) {
     config = config || {};
     if (!('stdio' in config)) {
       config.stdio = {
@@ -57,7 +59,7 @@ int main() {
       }
     }
     config.debug = true;
-    let mydebugger = JSCPP.run(code, '', config);
+    let mydebugger = JSCPP.run(code, input, config);
     let finished = false;
     window["forceQuit" + count] = false;
     console.log("begin");
@@ -79,6 +81,7 @@ counter = 0;
 
 var canvas = document.getElementById("gamecanvas");
 var context = canvas.getContext('2d');
+var inputElem = document.getElementById("input");
 
 function runCode() {
     // stop previous running code
@@ -87,7 +90,7 @@ function runCode() {
     counter++;
     context.clearRect(0, 0, canvas.width, canvas.height);
     canvas.focus();
-    run(editor.getValue(), counter);
+    run(editor.getValue(), counter, inputElem.value);
 }
 document.getElementById("run").addEventListener("click", runCode);
 </script>

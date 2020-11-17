@@ -86,6 +86,12 @@ drawImage("panda", 50, 0);
 drawImage("hero", 100, 50);
 ```
 
+```c++
+drawImageTile(string id, double x, double y, int tileWidth, int tileHeight, int tileId)
+```
+
+Desenha uma região da imagem identificada por `id` na posição (`x`, `y`). A imagem é dividida em regiões retangulares de tamanho `tileWidth`x`tileHeight`, numeradas sequencialmente a partir de 0. A numeração cresce da esquerda para a direita e de cima para baixo.
+
 ## Tela
 
 ```c++

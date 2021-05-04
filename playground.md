@@ -14,6 +14,12 @@ TODO:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/addon/edit/matchbrackets.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/clike/clike.min.js"></script>
 
+<script>
+window.onbeforeunload = function(event) {
+  return confirm("Tem certeza de que deseja atualizar a página? O código que você escreveu será perdido.");
+};
+</script>
+
 <textarea id="editor">
 #include &lt;inge9&gt;
 int main() {

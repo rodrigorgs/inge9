@@ -8,6 +8,7 @@ title: inge9 - referência
 - [Tela](#tela)
 - [Tempo](#tempo)
 - [Teclado](#teclado)
+- [Mouse](#mouse)
 - [Representação de teclas](#representação-de-teclas)
 - [Representação de cores](#representação-de-cores)
 
@@ -150,6 +151,43 @@ clearKey(string key)
 
 Altera o estado da tecla `key` para não-pressionada (mesmo que esteja sendo pressionada), de forma que as próximas chamadas a `isKeyDown(key)` retornarão `false` até o usuário pressionar a tecla novamente.
 
+## Mouse
+
+```c++
+mouseX()
+```
+
+Retorna a coordenada X do ponteiro do mouse (como um número inteiro).
+
+```c++
+mouseY()
+```
+
+Retorna a coordenada X do ponteiro do mouse (como um número inteiro).
+
+```c++
+isMouseLeftButtonDown()
+```
+
+Indica se o botão esquerdo do mouse está pressionado (booleano).
+
+```c++
+isMouseRightButtonDown()
+```
+
+Indica se o botão direito do mouse está pressionado (booleano).
+
+```c++
+clearMouseLeftButton()
+```
+
+Altera o estado do botão esquerdo do mouse para não-pressionado (mesmo que esteja sendo pressionado), de forma que as próximas chamadas a `isMouseLeftButtonDown` retornarão `false` até o usuário pressionar o botão novamente.
+
+```c++
+clearMouseRightButton()
+```
+
+Altera o estado do botão direito do mouse para não-pressionado (mesmo que esteja sendo pressionado), de forma que as próximas chamadas a `isMouseRightButtonDown` retornarão `false` até o usuário pressionar o botão novamente.
 
 ## Representação de teclas
 

@@ -49,9 +49,32 @@ int main() {
 
 <button id="run">Rodar</button>
 <canvas tabindex="1" id="gamecanvas" width="640" height="360" style="background: black;"></canvas>
+
 <p></p>
-<p>Entrada:<p>
-<textarea id="input" cols="40" rows="5"></textarea>
+
+<p><b>Saída (cout) e mensagens de erro:</b><p>
+<textarea id="output" disabled style="width: 640px; height: 200px;"></textarea>
+
+<p></p>
+<p><b>Entrada (cin):</b><p>
+<textarea id="input" style="width: 640px;" rows="5"></textarea>
+
+<script>
+// Logs to textarea
+let oldLog = console.log;
+let oldError = console.err;
+var outputElem = document.getElementById('output');
+outputElem.value = '';
+const newLogger = function (message) {
+    if (typeof message == 'object') {
+        outputElem.value += (JSON && JSON.stringify ? JSON.stringify(message).replace(/\\n/g, '\n') : message);
+    } else {
+        outputElem.value += message.replace(/\\n/g, '\n');
+    }
+}
+console.log = newLogger;
+console.error = newLogger;
+</script>
 
 <script src="assets/JSCPP.es5.min.js"></script>
 <script type="text/javascript">
@@ -64,20 +87,22 @@ int main() {
         }
       }
     }
-    config.debug = true;
-    let mydebugger = JSCPP.run(code, input, config);
-    let finished = false;
-    window["forceQuit" + count] = false;
-    console.log("begin");
-    do {
-      window.debuggerPromise = undefined;
-      finished = mydebugger.next();
-      if (window.debuggerPromise) {
-        await window.debuggerPromise;
-      }
-      
-    } while (!finished && !window["forceQuit" + count]);
-    console.log("end");
+    try {
+      config.debug = true;
+      let mydebugger = JSCPP.run(code, input, config);
+      let finished = false;
+      window["forceQuit" + count] = false;
+      do {
+        window.debuggerPromise = undefined;
+        finished = mydebugger.next();
+        if (window.debuggerPromise) {
+          await window.debuggerPromise;
+        }
+      } while (!finished && !window["forceQuit" + count]);
+    } catch (e) {
+      newLogger(e.message);
+      document.getElementById("output").scrollIntoView();
+    }
     delete window["forceQuit" + count];
   }
 </script>

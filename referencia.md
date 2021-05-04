@@ -133,6 +133,12 @@ lastKey()
 Retorna a tecla pressionada pelo usuário na ocasião da última execução de `readKey()`, como uma string. Consulte a seção sobre [representação de teclas](#representação-de-teclas) para mais informações.
 
 ```c++
+lastKeyWas(string key)
+```
+
+Indica se a tecla pressionada pelo usuário na ocasião da última execução de `readKey()` foi a tecla `key`. Consulte a seção sobre [representação de teclas](#representação-de-teclas) para mais informações.
+
+```c++
 isKeyDown(string key)
 ```
 
